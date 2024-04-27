@@ -80,6 +80,20 @@ function LanguageSelector() {
             Hindi
           </Button>
         </View>
+        <View style={styles.buttonContainer}>
+          <Button
+            onPress={() => languageSelectHandler(SUPPORTEDLANGUAGES.SPANISH)}
+            style={styles.button}
+            buttonStyle={
+              selectedCourse === SUPPORTEDLANGUAGES.SPANISH
+                ? styles.buttonSelected
+                : null
+            }
+            textStyle={styles.text}
+          >
+            Espanol
+          </Button>
+        </View>
       </Card>
 
       {showMethodology && (

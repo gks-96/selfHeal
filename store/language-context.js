@@ -5,6 +5,7 @@ export const SUPPORTEDLANGUAGES = {
   ENGLISH: "english",
   PUNJABI: "punjabi",
   HINDI: "hindi",
+  SPANISH: "spanish",
 };
 
 export const SUPPORTEDMETHODLOGIES = {
