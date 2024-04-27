@@ -36,10 +36,7 @@ function CharacterListScreen() {
           numColumns={languageDetails.numColumns}
           onPress={onPressHandler}
         />
-        <Input
-          style={{ fontSize: 20 }}
-          label="Something else on your mind? Type here "
-        />
+        <Input style={{ fontSize: 20 }} label="Something else on your mind?" />
 
         <Text style={styles.textStyle}>
           Don't want to type? Let us identify your emotion through your face

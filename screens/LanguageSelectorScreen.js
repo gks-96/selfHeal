@@ -114,17 +114,17 @@ function LanguageSelector() {
           </View>
           <View style={styles.buttonContainer}>
             <Button
-              onPress={() => methodologyHandler(SUPPORTEDMETHODLOGIES.CALL)}
+              onPress={() => methodologyHandler(SUPPORTEDMETHODLOGIES.SPEAK)}
               style={styles.button}
               buttonStyle={
-                methodology === SUPPORTEDMETHODLOGIES.CALL
+                methodology === SUPPORTEDMETHODLOGIES.SPEAK
                   ? styles.buttonSelected
                   : null
               }
               r
               textStyle={styles.text}
             >
-              Call
+              Speak
             </Button>
           </View>
         </Card>

@@ -10,7 +10,7 @@ export const SUPPORTEDLANGUAGES = {
 
 export const SUPPORTEDMETHODLOGIES = {
   CHAT: "chat",
-  CALL: "call",
+  SPEAK: "speak",
 };
 
 const defaultState = {
