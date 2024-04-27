@@ -58,7 +58,7 @@ function AuthenticationForm({ onSubmit, onCancel }) {
 
       <View style={styles.buttonContainer}>
         <Button onPress={cancelHandler} style={styles.button}>
-          Cancel
+          New User
         </Button>
         <Button onPress={submitHandler} style={styles.button}>
           Login

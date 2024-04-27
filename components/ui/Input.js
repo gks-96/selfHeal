@@ -5,7 +5,6 @@ function Input({ label, textInputConfig }) {
   const inputStyles = [styles.input];
 
   return (
-    //  check
     <View style={styles.inputContainer}>
       <Text style={styles.label}>{label}</Text>
       <TextInput style={inputStyles} {...textInputConfig} />

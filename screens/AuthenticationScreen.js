@@ -4,7 +4,10 @@ import Card from "../components/ui/Card";
 import { AuthContext } from "../store/auth-context";
 import { useContext, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
+import { GlobalStyles } from "../constants/colors";
+import { FontAwesome5 } from "@expo/vector-icons";
+
 function Authentication() {
   const authCtx = useContext(AuthContext);
   const navigation = useNavigation();
@@ -25,10 +28,21 @@ function Authentication() {
 
   return (
     <View style={styles.authScreen}>
-      <Card title="Welcome to Multilinguify">
+      <FontAwesome5
+        name="heart"
+        style={{ alignSelf: "center" }}
+        size={50}
+        color={GlobalStyles.colors.huskyPurple}
+      />
+      <Card title="Welcome to Self Love ">
         <AuthenticationForm onSubmit={submitHandler} onCancel={cancelHandler} />
-        <MaterialCommunityIcons name="meditation" size={24} color="black" />
       </Card>
+      <MaterialIcons
+        style={{ alignSelf: "center" }} // Aligns the icon horizontally to the center
+        name="self-improvement"
+        size={200}
+        color={GlobalStyles.colors.huskyGold}
+      />
     </View>
   );
 }
