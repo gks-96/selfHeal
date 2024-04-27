@@ -91,7 +91,7 @@ function LanguageSelector() {
             }
             textStyle={styles.text}
           >
-            Espanol
+            Spanish
           </Button>
         </View>
       </Card>
