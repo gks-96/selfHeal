@@ -45,10 +45,10 @@ export default function App() {
                 name="characterList"
                 component={CharacterListScreen}
               />
-              <Stack.Screen
+              {/* <Stack.Screen
                 name="CharacterDetail"
                 component={CharacterDetailScreen}
-              />
+              /> */}
             </Stack.Navigator>
           </NavigationContainer>
           <StatusBar barStyle={"light-content"} />

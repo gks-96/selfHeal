@@ -4,8 +4,10 @@ import { LanguageContext } from "../store/language-context";
 import { useNavigation } from "@react-navigation/native";
 import Card from "../components/ui/Card";
 import Input from "../components/ui/Input";
-
+import { AntDesign } from "@expo/vector-icons";
 import CharacterList from "../components/characterList/CharacterList";
+import { GlobalStyles } from "../constants/colors";
+import CameraScreen from "./CameraScreen";
 
 function CharacterListScreen() {
   const languageCtx = useContext(LanguageContext);
@@ -38,9 +40,25 @@ function CharacterListScreen() {
           style={{ fontSize: 20 }}
           label="Something else on your mind? Type here "
         />
+
+        <Text style={styles.textStyle}>
+          Don't want to type? Let us identify your emotion through your face
+        </Text>
+        <AntDesign
+          style={{ alignSelf: "center" }}
+          name="camera"
+          size={50}
+          onPress={onCameraHandler}
+          color={GlobalStyles.colors.huskyGold}
+        />
       </Card>
     </View>
   );
+
+  function onCameraHandler() {
+    console.log("inside camera handler ");
+    <CameraScreen />;
+  }
 }
 
 export default CharacterListScreen;
@@ -50,6 +68,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   textStyle: {
+    padding: 10,
     fontSize: 22,
     color: "white",
     marginBottom: 4,
