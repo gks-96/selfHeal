@@ -83,34 +83,34 @@ function LanguageSelector() {
       </Card>
 
       {showMethodology && (
-        <Card title="Choose Methodology!">
+        <Card title="Choose your way to seek help!">
           <View style={styles.buttonContainer}>
             <Button
-              onPress={() => methodologyHandler(SUPPORTEDMETHODLOGIES.WRITE)}
+              onPress={() => methodologyHandler(SUPPORTEDMETHODLOGIES.CHAT)}
               style={styles.button}
               buttonStyle={
-                methodology === SUPPORTEDMETHODLOGIES.WRITE
+                methodology === SUPPORTEDMETHODLOGIES.CHAT
                   ? styles.buttonSelected
                   : null
               }
               textStyle={styles.text}
             >
-              Write
+              Chat
             </Button>
           </View>
           <View style={styles.buttonContainer}>
             <Button
-              onPress={() => methodologyHandler(SUPPORTEDMETHODLOGIES.AUDIO)}
+              onPress={() => methodologyHandler(SUPPORTEDMETHODLOGIES.CALL)}
               style={styles.button}
               buttonStyle={
-                methodology === SUPPORTEDMETHODLOGIES.AUDIO
+                methodology === SUPPORTEDMETHODLOGIES.CALL
                   ? styles.buttonSelected
                   : null
               }
               r
               textStyle={styles.text}
             >
-              Audio
+              Call
             </Button>
           </View>
         </Card>

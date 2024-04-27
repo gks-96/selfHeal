@@ -1,40 +1,19 @@
 export const languageMetaData = {
   english: {
-    numColumns: 4,
+    numColumns: 2,
     characters: [
-      { character: "A" },
-      { character: "B" },
-      { character: "C" },
-      { character: "D" },
+      { character: "Sad" },
+      { character: "Anxious" },
 
-      { character: "E" },
-      { character: "F" },
-      { character: "G" },
-      { character: "H" },
+      { character: "Lost" },
+      { character: "Sleeping Issues" },
 
-      { character: "I" },
-      { character: "J" },
-      { character: "K" },
-      { character: "L" },
-
-      { character: "M" },
-      { character: "N" },
-      { character: "O" },
-      { character: "P" },
-
-      { character: "Q" },
-      { character: "R" },
-      { character: "S" },
-      { character: "T" },
-
-      { character: "U" },
-      { character: "V" },
-      { character: "W" },
-      { character: "X" },
-
-      { character: "Y" },
-      { character: "Z" },
+      { character: "Seasonal Depression" },
+      { character: "Trauma Related Issue" },
+      { character: "Sucidial" },
     ],
+    textStart: "How are you feeling today?",
+    textEnd: "Something else on your mind? Type Here",
   },
   punjabi: {
     numColumns: 5,

@@ -8,8 +8,8 @@ export const SUPPORTEDLANGUAGES = {
 };
 
 export const SUPPORTEDMETHODLOGIES = {
-  AUDIO: "audio",
-  WRITE: "write",
+  CHAT: "chat",
+  CALL: "call",
 };
 
 const defaultState = {
