@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// const BACKEND_URL = "https://react-native-b087d-default-rtdb.firebaseio.com";
-const BACKEND_URL = "http://192.168.12.118:8080/api";
+const BACKEND_URL = "http://192.168.12.118:8080/self-help/action/";
 
 export async function validateWrite(encodedImage) {
   let success = {
@@ -9,7 +8,7 @@ export async function validateWrite(encodedImage) {
   };
   return Promise.resolve(success);
 
-  const path = "/punjabi/gcp";
+  const path = "/chat";
   const url = BACKEND_URL + path;
 
   // console.log(encodedImage);
@@ -49,7 +48,7 @@ export async function validateAudio(encodedAudio, language) {
   };
   return Promise.resolve(success);
 
-  const path = "/api/punjabi/sound/verify/gcp";
+  const path = "/speak";
   const url = BACKEND_URL + path;
 
   // console.log(encodedImage);

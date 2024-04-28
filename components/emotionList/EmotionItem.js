@@ -1,28 +1,28 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { GlobalStyles } from "../../constants/colors";
 
-function Character({ itemData, onPress }) {
-  const { character } = itemData.item;
+function Emotion({ itemData, onPress }) {
+  const { emotion } = itemData.item;
   // console.log(itemData);
   return (
     <View style={styles.outerContainer}>
       <Pressable onPress={onPress}>
-        <View style={styles.characterStyle}>
-          <Text style={styles.text}>{character}</Text>
+        <View style={styles.emotionStyle}>
+          <Text style={styles.text}>{emotion}</Text>
         </View>
       </Pressable>
     </View>
   );
 }
 
-export default Character;
+export default Emotion;
 
 const styles = StyleSheet.create({
   outerContainer: {
     margin: 12,
     flex: 1,
   },
-  characterStyle: {
+  emotionStyle: {
     paddingTop: 8,
     paddingBottom: 8,
     paddingLeft: 5,

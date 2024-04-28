@@ -1,18 +1,18 @@
-import { StyleSheet, Text, View } from "react-native";
-import AuthenticationForm from "../components/authentication/AuthenticationForm";
-import Card from "../components/ui/Card";
+import { StyleSheet, View } from "react-native";
 import { useContext, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+
+import Card from "../components/ui/Card";
 import {
-  LanguageContext,
+  EmotionContext,
   SUPPORTEDLANGUAGES,
   SUPPORTEDMETHODLOGIES,
-} from "../store/language-context";
-import { useNavigation } from "@react-navigation/native";
+} from "../store/emotion-context";
 import Button from "../components/ui/Button";
 import { GlobalStyles } from "../constants/colors";
 
 function LanguageSelector() {
-  const languageCtx = useContext(LanguageContext);
+  const emotionCtx = useContext(EmotionContext);
 
   const [selectedCourse, setSelectedCourse] = useState("");
   const [methodology, setMethodology] = useState("");
@@ -22,6 +22,7 @@ function LanguageSelector() {
 
   function languageSelectHandler(course) {
     setSelectedCourse(course);
+    emotionCtx.updateLanguage(course);
     setShowMethodology(true);
   }
 
@@ -31,8 +32,7 @@ function LanguageSelector() {
   }
 
   function pressHandler() {
-    languageCtx.updateLanguage(selectedCourse, methodology);
-    navigation.navigate("characterList");
+    navigation.navigate("emotionList");
   }
 
   return (
@@ -63,7 +63,7 @@ function LanguageSelector() {
             }
             textStyle={styles.text}
           >
-            Punjabi
+            ਪੰਜਾਬੀ
           </Button>
         </View>
         <View style={styles.buttonContainer}>
@@ -77,7 +77,7 @@ function LanguageSelector() {
             }
             textStyle={styles.text}
           >
-            Hindi
+            हिंदी
           </Button>
         </View>
         <View style={styles.buttonContainer}>
@@ -91,7 +91,7 @@ function LanguageSelector() {
             }
             textStyle={styles.text}
           >
-            Spanish
+            Español
           </Button>
         </View>
       </Card>
@@ -109,7 +109,7 @@ function LanguageSelector() {
               }
               textStyle={styles.text}
             >
-              Chat
+              {emotionCtx.emotionDetails.metaData.i18["chat"]}
             </Button>
           </View>
           <View style={styles.buttonContainer}>
@@ -121,10 +121,9 @@ function LanguageSelector() {
                   ? styles.buttonSelected
                   : null
               }
-              r
               textStyle={styles.text}
             >
-              Speak
+              {emotionCtx.emotionDetails.metaData.i18["speak"]}
             </Button>
           </View>
         </Card>
@@ -137,7 +136,7 @@ function LanguageSelector() {
             style={styles.submitButton}
             textStyle={styles.text}
           >
-            Submit
+            {emotionCtx.emotionDetails.metaData.i18.submit}
           </Button>
         </View>
       )}
@@ -163,8 +162,6 @@ const styles = StyleSheet.create({
   },
   submitButton: {
     margin: 16,
-    // paddingVertical: 12,
-    // paddingHorizontal: 12,
   },
   buttonSelected: {
     backgroundColor: GlobalStyles.colors.huskyGold,

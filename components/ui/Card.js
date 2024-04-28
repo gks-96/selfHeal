@@ -19,7 +19,7 @@ export default Card;
 
 const styles = StyleSheet.create({
   cardContainer: {
-    margin: 16,
+    margin: 8,
     padding: 16,
     borderRadius: 16,
     backgroundColor: GlobalStyles.colors.huskyPurple,

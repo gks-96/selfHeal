@@ -9,9 +9,12 @@ import { GlobalStyles } from "./constants/colors";
 import { StatusBar } from "react-native";
 import AuthContextProvider from "./store/auth-context";
 import LanguageSelector from "./screens/LanguageSelectorScreen";
-import LanguageContextProvider from "./store/language-context";
-import CharacterListScreen from "./screens/CharacterListScreen";
-import CharacterDetailScreen from "./screens/CharacterDetailScreen";
+import LanguageContextProvider from "./store/emotion-context";
+import CharacterListScreen from "./screens/EmotionListScreen";
+// import CharacterDetailScreen from "./screens/CharacterDetailScreen";
+import CameraScreen from "./screens/CameraScreen";
+import EmotionListScreen from "./screens/EmotionListScreen";
+import EmotionContextProvider from "./store/emotion-context";
 // import { GlobalStyles } from "./constants/colors";
 
 const Stack = createStackNavigator();
@@ -20,7 +23,7 @@ export default function App() {
   return (
     <>
       <AuthContextProvider>
-        <LanguageContextProvider>
+        <EmotionContextProvider>
           <NavigationContainer>
             <Stack.Navigator
               initialRouteName="Authentication"
@@ -33,6 +36,14 @@ export default function App() {
             >
               <Stack.Screen name="Authentication" component={Authentication} />
               <Stack.Screen
+                name="camera"
+                component={CameraScreen}
+                options={{
+                  title: "Detecting Emotion",
+                }}
+                screenOptions={{ presentation: "modal" }}
+              />
+              <Stack.Screen
                 name="languageSelector"
                 component={LanguageSelector}
                 options={{
@@ -41,10 +52,7 @@ export default function App() {
                   headerLeft: null,
                 }}
               />
-              <Stack.Screen
-                name="characterList"
-                component={CharacterListScreen}
-              />
+              <Stack.Screen name="emotionList" component={EmotionListScreen} />
               {/* <Stack.Screen
                 name="CharacterDetail"
                 component={CharacterDetailScreen}
@@ -52,7 +60,7 @@ export default function App() {
             </Stack.Navigator>
           </NavigationContainer>
           <StatusBar barStyle={"light-content"} />
-        </LanguageContextProvider>
+        </EmotionContextProvider>
       </AuthContextProvider>
     </>
   );

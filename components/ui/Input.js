@@ -3,6 +3,9 @@ import { GlobalStyles } from "../../constants/colors";
 
 function Input({ label, textInputConfig }) {
   const inputStyles = [styles.input];
+  if (textInputConfig.multiline) {
+    inputStyles.push(styles.multiline);
+  }
 
   return (
     <View style={styles.inputContainer}>
@@ -16,7 +19,8 @@ export default Input;
 
 const styles = StyleSheet.create({
   inputContainer: {
-    marginHorizontal: 4,
+    // flex: 1,
+    // marginHorizontal: 4,
     marginVertical: 8,
   },
   label: {
@@ -28,7 +32,10 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 6,
     borderRadius: 8,
-    fontSize: 18,
+    fontSize: 16,
     color: GlobalStyles.colors.huskyPurple,
+  },
+  multiline: {
+    height: 100,
   },
 });

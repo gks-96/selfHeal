@@ -1,12 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { useContext, useEffect } from "react";
+
+import { useNavigation } from "@react-navigation/native";
+import { MaterialIcons } from "@expo/vector-icons";
+
 import AuthenticationForm from "../components/authentication/AuthenticationForm";
 import Card from "../components/ui/Card";
 import { AuthContext } from "../store/auth-context";
-import { useContext, useEffect } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { MaterialIcons } from "@expo/vector-icons";
 import { GlobalStyles } from "../constants/colors";
-import { FontAwesome5 } from "@expo/vector-icons";
+import IconButton from "../components/ui/IconButton";
 
 function Authentication() {
   const authCtx = useContext(AuthContext);
@@ -28,12 +30,15 @@ function Authentication() {
 
   return (
     <View style={styles.authScreen}>
-      <FontAwesome5
-        name="heart"
-        style={{ alignSelf: "center" }}
-        size={50}
-        color={GlobalStyles.colors.huskyPurple}
-      />
+      <View style={styles.iconContainer}>
+        <IconButton
+          icon={"heart-outline"}
+          size={80}
+          color={GlobalStyles.colors.huskyPurple}
+          onPress={() => {}}
+        />
+      </View>
+
       <Card title="Welcome to Self Love ">
         <AuthenticationForm onSubmit={submitHandler} onCancel={cancelHandler} />
       </Card>
@@ -54,5 +59,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     marginTop: 120,
+  },
+  iconContainer: {
+    display: "flex",
+    alignItems: "center",
   },
 });
