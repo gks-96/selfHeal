@@ -39,7 +39,7 @@ function Authentication() {
         />
       </View>
 
-      <Card title="Welcome to Self Love ">
+      <Card title="Welcome to SelfHeal App ">
         <AuthenticationForm onSubmit={submitHandler} onCancel={cancelHandler} />
       </Card>
       <MaterialIcons
