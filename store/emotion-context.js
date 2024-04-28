@@ -23,9 +23,6 @@ const defaultState = {
 export const EmotionContext = createContext({
   emotionDetails: defaultState,
   updateLanguage: (course, methodology) => {},
-  // updateSelectedChar: (char) => {},
-  // updateNextChar: (char) => {},
-  // updatePrevChar: (char) => {},
 });
 
 function EmotionContextProvider({ children }) {
