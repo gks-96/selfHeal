@@ -29,3 +29,11 @@ javascript
 react-native
 spring
 vertex-ai
+
+More information about the Hackathon submission can be found here : https://devpost.com/software/self-heal-mobile-application
+
+
+Workigng Demo
+
+https://github.com/gks-96/selfHeal/assets/69946546/d3438459-48cb-4a08-a45f-b8ab5d6850ca
+
